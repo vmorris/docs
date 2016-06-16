@@ -14,7 +14,7 @@ kept in a repository that you create, thus remaining within your
 control.
 
 The major components include:
-- [Golang programming language](#installing-golang)
+- [Go programming language](#installing-go)
 - [Docker client and daemon](#docker-daemon--docker-registry)
 - [Docker registry](#docker-daemon--docker-registry)
 - [Hyperledger Fabric](#build-the-hyperledger-fabric-core)
@@ -27,30 +27,33 @@ and Hyperledger Fabric Membership and Security Services. This allows for
 a fully *dockerized* development or proof-of-concept Hyperledger Fabric
 environment.
 
-The procedures in this guide are tailored for Ubuntu. Due to the ongoing development activity within the Hyperledger project, there is a chance that portions of this document
-may become obsolete or out of date.
+The procedures in this guide are tailored for Ubuntu. Due to the ongoing development activity 
+within the Hyperledger project, there is a chance that portions of this document may become obsolete 
+or out of date.
 
 For more information about the Hyperledger Fabric project, see
 <https://github.com/hyperledger/fabric>.
 
 > ***NOTE:***   
 > The instructions contained in this document assume that you
-> are using a non-root user with sudo authority and that the non-root
-> user has been added to the **wheel** group. In addition, update the
-> **/etc/sudoers** file to enable the **wheel** group with no password
-> access, and append **/usr/local/bin** and the targeted directory that
-> will contain the **go** executable to the **secure_path** variable.
+> are using a non-root user with sudo authority.
 
-Installing Golang
+Installing Go
 =================
-The Hyperledger Fabric and the Docker Registry are written using the
-Golang programming language. Therefore, a Golang compiler needs to be
-installed in order to compile the Hyperledger Fabric and Docker Registry
-source code.
+The Hyperledger Fabric is written using the
+Go programming language. Therefore, a Go compiler needs to be
+installed in order to compile the Hyperledger Fabric source code.
 
 Ubuntu has packaged Go in 16.04 LTS (Xenial). Install it with the command:
-
+  
+    ```
     sudo apt-get install golang-1.6-go
+    ```
+
+No futher configuration is needed at this time. You can test that go has been installed by running ***go version***:
+    ```
+    go version
+    ```
 
 Docker Daemon & Docker Registry
 ===============================
